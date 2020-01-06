@@ -1,0 +1,72 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>用户注册</title>
+<script language="javascript">
+function checkpassword()
+{
+	if(document.form1.password.value != document.form1.password2.value)
+		{
+			alert("两次密码输入不一致");
+			return;
+		}
+}
+function checkname()
+{
+	if(document.form1.name.value !="")
+		{return;}
+	else {alert("用户名为空！"); return;}
+}
+</script>	
+</head>
+<body>
+<div align="center" ><strong><u>用户注册<br><br></u> </strong></div>
+<form align ="center" name ="form1" action = "register.jsp" method = "get">  
+<table align ="center">
+     <tr> 
+     <td align="center">用户名：</td>
+     <td><input type = "text" name = "name" value = ""  onBlur = "checkname()"/></td>
+     </tr>
+ 
+    <tr> 
+    <td align="center">密码：</td>
+    <td><input type = "password" name = "password" value = "" /></td>
+    </tr>
+
+    <tr> 
+    <td align="center">确认密码：</td>
+    <td><input type = "password" name = "password2" value = "" onBlur = "checkpassword()"/></td>
+    </tr>
+
+    <tr>
+    <td align="center">性别：</td>
+    <td><input type = "radio" name = "gender" value = "female" >女性
+        <input type = "radio" name = "gender" value = "male">男性</td>
+    </tr>
+
+    <tr>
+    <td align="center">年龄：</td>
+    <td><select name = "age" > 
+          <option value = "20以下">20以下</option> 
+          <option value = "20-40">20-40岁</option></td>
+    </tr>
+
+    <tr> 
+    <td align="center">个人资料：</td>
+    <td><textarea name = "brief" rows =5 cols = 30>请输入留言</textarea></td>
+    </tr>
+
+    <tr>
+    <td align="center">您的爱好：</td>
+    <td> <input type = "checkbox" name = "in1" value = "sport" />体育 <br>
+                       <input type = "checkbox" name = "in1" value = "read" />阅读 <br>
+                       <input type = "checkbox" name = "in1" value = "music"/>音乐<br>
+                       <input type = "checkbox" name = "in1" value = "travel"/>旅游</td>
+    </tr>
+</table>
+<div align="center"><input type="submit" value="注册">          <input type="reset" value="重置">  </div>
+</form>
+
+</body>
+</html>

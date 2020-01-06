@@ -1,0 +1,37 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>JavaScript计算页面停留时间</title>
+</head>
+<body>
+<form name="form1" method="post" action="">
+<center>
+  <p><font size="5" color="black" face="宋体">您在本页面已停留：</font></p>
+  <p>
+      <input name="textarea" type="text" value="">
+  </p>
+</center>
+<script type="text/javascript">
+	    var second=0;
+		var minute=0;
+		var hour=0;
+		window.setTimeout("interval();",1000);
+			function interval()
+			{
+				second++;
+				if(second==60)
+				{
+				second=0;minute+=1;
+				}
+				if(minute==60)
+				{
+				minute=0;hour+=1;
+				}
+				document.form1.textarea.value = hour+"时"+minute+"分"+second+"秒";
+				window.setTimeout("interval();",1000);
+			}  
+</script>
+</form>
+</body>
+</html>

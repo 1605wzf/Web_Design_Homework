@@ -1,0 +1,104 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>JavaScript实现简易计算器</title>
+</head>
+<style type="text/css">
+	.td td {
+		width:40px;
+		height:25px;
+	}
+	td #string {
+		width:210px;
+		height:30px;
+	}
+	td .bt{
+		width:100%;
+		height:100%;
+	}
+</style>
+<script language="javascript">
+	function add(){
+		var str = Calculator.string.value;
+		var e=window.event;
+		var obj=e.srcElement;
+		str =str+obj.value;
+		Calculator.string.value = str;
+	}
+	
+	function comb(){
+		var str = Calculator.string.value;
+		Calculator.string.value = eval(str);
+	}
+	
+	function cle(){
+			Calculator.string.value="";
+	}
+	
+	function del(){
+			var str = Calculator.string.value;
+			Calculator.string.value = str.slice(0,-1);
+	}
+	function sqr(){
+			var str = Calculator.string.value;
+			Calculator.string.value = Math.sqrt(Number(str));
+	}
+	function fu(){
+			var str = Calculator.string.value;
+			Calculator.string.value = -Number(str);
+	}
+	function dao(){
+		var str = Calculator.string.value;
+		Calculator.string.value = 1/Number(str);
+	}
+</script>
+
+<body>
+<form name="Calculator"  id="Calculator" action="" method="post">
+	<table width="229" border="1" cellpadding="1" align="center">
+  	
+ 	<tr>
+    <td height="45" colspan="6" align="center">
+    		<input type="text" name="string" id="string"  value=""/>
+    </td>
+  </tr>
+  <tr class="td">
+    <td ><input type="button" onclick="sqr()" class="bt"  value="√"/></td>
+    <td><input type="button" onclick="fu()" class="bt"  value="±"/></td>
+    <td ><input type="button" onclick="dao()" class="bt"  value="1/x"/></td>
+    <td ><input type="button" onclick="add()" class="bt"  value="("/></td>
+    <td ><input type="button" onclick="add()" class="bt"  value=")"/></td>
+  </tr>
+  <tr class="td">
+    <td ><input type="button" onclick="add()" class="bt"  value="7"/></td>
+    <td><input type="button" onclick="add()" class="bt"  value="8"/></td>
+    <td><input type="button" onclick="add()" class="bt"  value="9"/></td>
+    <td><input type="button" onclick="del()" class="bt"  value="&larr;"/></td>
+    <td><input type="button" onclick="cle()" class="bt"  value="C"/></td>
+  </tr>
+  <tr class="td">
+    <td ><input type="button" onclick="add()" class="bt"  value="4"/></td>
+    <td><input type="button" onclick="add()" class="bt"  value="5"/></td>
+    <td><input type="button" onclick="add()" class="bt"  value="6"/></td>
+    <td><input type="button" onclick="add()" class="bt"  value="/"/></td>
+    <td><input type="button" onclick="add()" class="bt"  value="*"/></td>
+  </tr>
+  <tr class="td">
+    <td ><input type="button" onclick="add()" class="bt"  value="1"/></td>
+    <td><input type="button" onclick="add()" class="bt"  value="2"/></td>
+    <td><input type="button" onclick="add()" class="bt"  value="3"/></td>
+    <td><input type="button" onclick="add()" class="bt"  value="+"/></td>
+    <td><input type="button" onclick="add()" class="bt"  value="-"/></td>
+  </tr>
+  <tr class="td">
+    <td ><input type="button" onclick="add()" class="bt"  value="0"/></td>
+    <td><input type="button" onclick="add()" class="bt"  value="00"/></td>
+    <td><input type="button" onclick="add()" class="bt"  value="."/></td>
+    <td><input type="button" onclick="add()" class="bt"  value="%"/></td>
+    <td><input type="button" onclick="comb()" class="bt"  value="="/></td>
+  </tr>
+</table>
+</form>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>JavaScript显示时钟</title>
+</head>
+<script type="text/javascript">
+	function getTime(){
+		var Week, Weekday;
+		var date =  new Date();
+		
+		Week = ["星期天", "星期一", "星期二", "星期三", "星期四", "星期五", "星期六"];
+		Weekday = date.getDay();
+		year = date.getFullYear();
+		month = date.getMonth() + 1;
+		day = date.getDate();
+		hours = date.getHours();
+		minutes = date.getMinutes();
+		seconds = date.getSeconds();
+    
+    	document.getElementById("getTime").innerHTML = year + "年" + month + "月" + day + "日" + "\t" + hours + ":" + minutes + ":" + seconds + "\t" + Week[Weekday];
+	};
+</script>
+
+<body οnlοad="startTime()">   
+    <div id="getTime" style="float: left;
+                             margin-left: 10px;
+                             margin-top: 15px;
+                             background-color: #aabbcc;">
+        <p>
+        <script>
+            getTime();
+            setInterval("getTime()",1000);
+        </script>
+        </p>
+    </div>
+</body>
+</html>
